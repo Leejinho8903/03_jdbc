@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment/>
+	<entry key="insertMember">
+		INSERT
+		  INTO TBL_MEMBER M
+		(
+		  M.MEMBER_NO
+		, M.MEMBER_ID
+		, M.MEMBER_PWD
+		, M.MEMBER_NAME
+		, M.GENDER
+		, M.EMAIL
+		, M.PHONE
+		, M.ADDRESS
+		, M.AGE
+		, M.ENROLL_DATE
+		)
+		VALUES
+		(
+		  SEQ_MEMBER_NO.NEXTVAL
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, ?
+		, SYSDATE
+		)
+	</entry>
+	<entry key="selectAllMembers">
+		SELECT
+		       M.*
+		  FROM TBL_MEMBER M
+	</entry>
+	<entry key="selectById">
+		SELECT
+		       M.*
+		  FROM TBL_MEMBER M
+		 WHERE M.MEMBER_ID = ?
+	</entry>
+	<entry key="selectByGender">
+		SELECT
+		       M.*
+		  FROM TBL_MEMBER M
+		 WHERE M.GENDER = ?
+	</entry>
+	<entry key="updatePassword">
+		UPDATE
+               TBL_MEMBER M
+           SET M.MEMBER_PWD = ?
+         WHERE M.MEMBER_ID = ?
+	</entry>
+	<entry key="updateEmail">
+ 		UPDATE
+               TBL_MEMBER M
+           SET M.EMAIL = ?
+         WHERE M.MEMBER_ID = ?
+	</entry>
+	<entry key="updatePhone">
+		UPDATE
+               TBL_MEMBER M
+           SET M.PHONE = ?
+         WHERE M.MEMBER_ID = ?
+	</entry>
+	<entry key="updateAddress">
+		UPDATE
+               TBL_MEMBER M
+           SET M.ADDRESS = ?
+         WHERE M.MEMBER_ID = ?
+	</entry>
+	<entry key="deleteMember">
+        DELETE
+          FROM TBL_MEMBER M
+         WHERE M.MEMBER_ID = ?
+	</entry>
+</properties>
